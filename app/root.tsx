@@ -22,12 +22,12 @@ export const links: LinksFunction = () => [
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" className="text-[14px]">
       <head>
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-zinc-700 w-full min-h-screen text-white flex text-[14px]">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

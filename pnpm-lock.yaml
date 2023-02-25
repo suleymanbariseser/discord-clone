@@ -7,8 +7,11 @@ specifiers:
   '@remix-run/node': ^1.13.0
   '@remix-run/react': ^1.13.0
   '@remix-run/serve': ^1.13.0
+  '@types/bcryptjs': ^2.4.2
   '@types/react': ^18.0.25
   '@types/react-dom': ^18.0.8
+  bcryptjs: ^2.4.3
+  clsx: ^1.2.1
   esbuild-register: ^3.4.2
   eslint: ^8.27.0
   isbot: ^3.6.5
@@ -24,6 +27,8 @@ dependencies:
   '@remix-run/node': 1.13.0
   '@remix-run/react': 1.13.0_biqbaboplfbrettd7655fr4n2y
   '@remix-run/serve': 1.13.0
+  bcryptjs: 2.4.3
+  clsx: 1.2.1
   isbot: 3.6.6
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -32,6 +37,7 @@ dependencies:
 devDependencies:
   '@remix-run/dev': 1.13.0_@remix-run+serve@1.13.0
   '@remix-run/eslint-config': 1.13.0_km5ddj7uwb23cqeymeyvzjsfb4
+  '@types/bcryptjs': 2.4.2
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   esbuild-register: 3.4.2_esbuild@0.16.3
@@ -1951,6 +1957,10 @@ packages:
     resolution: {integrity: sha512-XTIieEY+gvJ39ChLcB4If5zHtPxt3Syj5rgZR+e1ctpmK8NjPf0zFqsz4JpLJT0xla9GFDKjy8Cpu331nrmE1Q==}
     dev: true
 
+  /@types/bcryptjs/2.4.2:
+    resolution: {integrity: sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==}
+    dev: true
+
   /@types/cacheable-request/6.0.3:
     resolution: {integrity: sha512-IQ3EbTzGxIigb1I3qPZc1rWJnH0BmSKv5QYTalEwweFvyBDLSAe24zP0le/hyi7ecGfZVlIVAg4BZqb8WBwKqw==}
     dependencies:
@@ -2530,6 +2540,10 @@ packages:
     dependencies:
       safe-buffer: 5.1.2
 
+  /bcryptjs/2.4.3:
+    resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
+    dev: false
+
   /big.js/5.2.2:
     resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
     dev: true
@@ -2779,6 +2793,11 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
     dev: true
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
