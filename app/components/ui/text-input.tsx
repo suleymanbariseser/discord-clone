@@ -7,6 +7,7 @@ type Props = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
   className?: string;
+  name: string
 };
 
 const TextInput = ({
@@ -16,6 +17,7 @@ const TextInput = ({
   value,
   error,
   className,
+  name
 }: Props) => {
   return (
     <div className={clsx('w-full text-sm', className)}>
@@ -33,6 +35,7 @@ const TextInput = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        name={name}
       />
     </div>
   );

@@ -4,27 +4,29 @@ const db = new PrismaClient();
 
 async function seed() {
   await Promise.all(
-    getJokes().map((joke) => {
-      return db.user.create({ data: joke });
+    getUsers().map((user) => {
+      return db.user.create({ data: user });
     })
   );
 }
 
 seed();
 
-function getJokes(): User[] {
+function getUsers(): User[] {
   return [
     {
         email: 'example@gmail.com',
         birthDate: new Date(),
-        password: 'Qq12345678',
+        // hashed Qq12345678_
+        password: '$2y$10$YS9f.WnJlLXansga/xMxauMteH/e.5KnD2BeTTnyv/oQoSxcOcLYu',
         username: 'example',
         id: 1
     },
     {
         email: 'other@gmail.com',
         birthDate: new Date(),
-        password: 'Qq12345678',
+        // Qwerty1234_
+        password: '$2y$10$mNj1SdZuPAmFZd3cbCrluudDyZNh4/ExJZuYi82WiRci1hhwLAzfu',
         username: 'other',
         id: 2
     }
