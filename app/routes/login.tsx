@@ -45,7 +45,7 @@ export const action = async ({ request }: ActionArgs) => {
       { status: 400 }
     );
 
-  return createUserSession(user.id, '/');
+  return createUserSession(user.id.toString(), '/');
 };
 
 const Login = () => {
