@@ -1,4 +1,5 @@
-import type { ActionArgs } from '@remix-run/node';
+import type { ActionArgs, LoaderFunction} from '@remix-run/node';
+import { redirect } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useActionData } from '@remix-run/react';
 import Button from '~/components/ui/button';
@@ -6,7 +7,14 @@ import TextInput from '~/components/ui/text-input';
 import { loginSchema } from '~/schemas/user';
 import { db } from '~/utils/db.server';
 import { validate } from '~/utils/form';
-import { comparePassword, createUserSession } from '~/utils/session.server';
+import { comparePassword, createUserSession, getUserId } from '~/utils/session.server';
+
+export let loader: LoaderFunction = async ({ request }) => {
+  let userId = await getUserId(request);
+  console.log(userId)
+  if (userId) return redirect('/');
+  return {};
+};
 
 export const action = async ({ request }: ActionArgs) => {
   const res = await validate({ request, schema: loginSchema });
