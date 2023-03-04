@@ -11,9 +11,70 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  username String @unique
-  birthDate DateTime @default(now())
-  password String
+  id                  Int       @id         @default(autoincrement())
+
+  // Columns
+  email               String    @unique
+  username            String    @unique
+  birthDate           DateTime              @default(now())
+  password            String
+  messages            Message[]
+  createdChannels     Channel[]
+  channels            UserChannels[]
+}
+
+model Message {
+  id                  String    @id         @default(uuid())
+
+  // Foreign Ids
+  channelId           String
+  senderId            Int
+
+  // Relations
+  channel             Channel   @relation(fields: [channelId], references: [id])
+  sender              User      @relation(fields: [senderId], references: [id])
+  
+  // Dates
+  createdAt           DateTime              @default(now())
+  deletedAt           DateTime?
+  updatedAt           DateTime  @updatedAt
+}
+
+model Channel {
+  id                  String    @id         @default(uuid())
+
+  // Foreign ids
+  creatorId           Int
+  messages            Message[]
+
+  // Columns
+  members             UserChannels[]
+
+  // Relations
+  creator             User      @relation(fields: [creatorId], references: [id])
+
+  // Dates
+  createdAt           DateTime              @default(now())
+  deletedAt           DateTime?
+  updatedAt           DateTime
+}
+
+enum UserRole {
+  ADMIN
+  JOINER
+}
+
+model UserChannels {
+  // foreign ids
+  userId              Int
+  channelId           String
+
+  // Columns
+  role                UserRole
+
+  // Relations
+  user                User      @relation(fields: [userId], references: [id])
+  channel             Channel   @relation(fields: [channelId], references: [id])
+
+  @@id([userId, channelId])
 }
