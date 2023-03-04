@@ -30,6 +30,9 @@ model Message {
   channelId           String
   senderId            Int
 
+  // Columns
+  content             String
+
   // Relations
   channel             Channel   @relation(fields: [channelId], references: [id])
   sender              User      @relation(fields: [senderId], references: [id])
@@ -48,6 +51,7 @@ model Channel {
   messages            Message[]
 
   // Columns
+  title               String
   members             UserChannels[]
 
   // Relations
@@ -56,12 +60,12 @@ model Channel {
   // Dates
   createdAt           DateTime              @default(now())
   deletedAt           DateTime?
-  updatedAt           DateTime
+  updatedAt           DateTime  @updatedAt
 }
 
 enum UserRole {
   ADMIN
-  JOINER
+  MEMBER
 }
 
 model UserChannels {

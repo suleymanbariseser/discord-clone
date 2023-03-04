@@ -51,3 +51,14 @@ rm -rf app
 # copy your app over
 cp -R ../my-old-remix-app/app app
 ```
+
+
+# Prisma
+
+## Create Tables
+
+To create tables in the database, run `npx prisma db push`
+
+## Seed
+
+To create some mocked data in database, run `yarn seed`
