@@ -22,7 +22,7 @@ const Channels = () => {
   const channels = useLoaderData<typeof loader>();
 
   return (
-    <div className='h-screen flex flex-row'>
+    <div className='h-screen w-full flex flex-row'>
       <div className='bg-zinc-800 h-screen w-[250px] p-2'>
         <div className='flex flex-row justify-between mb-2'>
           <h1>Channels</h1>
@@ -42,7 +42,7 @@ const Channels = () => {
           ))}
         </div>
       </div>
-      <div className='flex-1 p-4'>
+      <div className='flex-1 flex'>
         <Outlet />
       </div>
     </div>
