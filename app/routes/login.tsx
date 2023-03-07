@@ -11,7 +11,6 @@ import { comparePassword, createUserSession, getUserId } from '~/utils/session.s
 
 export let loader: LoaderFunction = async ({ request }) => {
   let userId = await getUserId(request);
-  console.log(userId)
   if (userId) return redirect('/');
   return {};
 };
@@ -59,8 +58,6 @@ export const action = async ({ request }: ActionArgs) => {
 const Login = () => {
   const actionData = useActionData<typeof action>();
 
-  console.log(actionData);
-
   return (
     <div className='flex flex-1 items-center justify-center'>
       <div className='px-8 py-4 bg-zinc-800 rounded-md w-full sm:container '>
@@ -84,7 +81,7 @@ const Login = () => {
               error={actionData?.errors?.password?.[0]}
             />
           </div>
-          <Button onClick={() => console.log('clicked')}>Log In</Button>
+          <Button>Log In</Button>
         </form>
         <p className='mt-2 text-gray-400'>
           Need an account? <span className='text-sky-700'>Register</span>
