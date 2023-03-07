@@ -4,7 +4,7 @@ import { json } from '@remix-run/node';
 import { useActionData } from '@remix-run/react';
 import Button from '~/components/ui/button';
 import TextInput from '~/components/ui/text-input';
-import { loginSchema } from '~/schemas/user';
+import { loginSchema } from '~/schemas/login';
 import { db } from '~/utils/db.server';
 import { validate } from '~/utils/form';
 import { comparePassword, createUserSession, getUserId } from '~/utils/session.server';

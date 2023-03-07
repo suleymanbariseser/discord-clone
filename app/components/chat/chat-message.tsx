@@ -12,9 +12,11 @@ const ChatMessage = ({ message, hideHeader, sender }: Props) => {
   return (
     <div key={message.id} className='w-full mb-4 flex flex-row'>
       <div className='pr-4'>
-        {!hideHeader && (
-          <div className='h-[40px] w-[40px] bg-red-100 rounded-full' />
-        )}
+        <div className='w-[40px]'>
+          {!hideHeader && (
+            <div className='h-[40px] w-full bg-red-100 rounded-full' />
+          )}
+        </div>
       </div>
       <div className='flex-1 flex flex-col'>
         {!hideHeader && (
